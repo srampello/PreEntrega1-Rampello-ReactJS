@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+/*
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+*/
+
+.App{
+  max-width: 1550px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-sizing: 0 2px 6px black;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+header{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 5px 10px black;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover{
+  color: green;
+}
+
+li{
+  list-style: none;
+}
+
+header ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li{
+  padding: 0 1rem;
+}
+
+.cart{
+  position: relative;
+  cursor: pointer;
+}
+
+.cart box-icon{
+  width: 35px;
+  height: 35px;
+}
+
+.cart span{
+  position: absolute;
+  top: -0.3rem;
+  right: -0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0rem;
+  font-size: 1rem;
+  font-family: 700;
+  background-color: red;
+}
+
+.card{
+  margin: 20px;
+}
+/* Media */
+
+
