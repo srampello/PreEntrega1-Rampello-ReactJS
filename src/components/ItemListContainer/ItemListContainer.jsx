@@ -1,20 +1,23 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { useEffect } from 'react';
+import { mProducts } from '../../helpers/products';
+import { useState } from 'react';
+import { ItemList } from './ItemList/ItemList';
+//import { ItemCounter } from './ItemCounter/ItemCounter';
 
-export function ItemListContainer(props){
+export function ItemListContainer(){
+    const [productos, setProductos] = useState([])
+    useEffect(()=>{
+      mProducts()
+        .then(result => setProductos(result))
+        .catch(err => console.log(err))
+    })
+
+
   return (
     <>
-      <Card border='dark' key={props.id} style={{ width: '175px' }}>
-        <Card.Img variant="top" src={props.image} alt={props.alt} />
-        <Card.Body>
-          <Card.Title>{props.name}</Card.Title>
-          <Card.Text>
-          {props.price}
-          </Card.Text>
-          <Button variant="dark">Buy</Button>
-        </Card.Body>
-      </Card>
+      {/*<ItemCounter/>*/}
+      <ItemList productos={productos}/>
     </>
   )
 }
