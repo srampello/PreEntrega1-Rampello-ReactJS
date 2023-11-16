@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { mProducts } from '../../../helpers/products'
 import { useParams } from 'react-router-dom'
+import { ItemCounter } from '../ItemCounter/ItemCounter'
 
 export const ItemDetail = () => {
   const [product, setProduct] = useState({})
@@ -11,6 +12,10 @@ export const ItemDetail = () => {
       .then(res => setProduct(res))
       .catch(err => console.log('Error: ', err))
   }, [])
+
+  const onAdd = (cantidad) =>{
+    console.log(`La cantidad seleccionada es: ${cantidad}`)
+  }
 
   return (
     <div className="card col-8 position-absolute top-50 start-50 translate-middle text-bg-dark">
@@ -24,6 +29,7 @@ export const ItemDetail = () => {
             <h5 className="card-title font-monospace">{product.name}</h5>
             <h4 className='font-monospace'>${product.price}</h4>
             <a href="#" class="btn mt-3 btn-light btn-lg">Buy</a>
+            <ItemCounter onAdd={onAdd}/>
           </div>
         </div>
       </div>

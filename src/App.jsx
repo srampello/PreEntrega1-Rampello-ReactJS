@@ -14,7 +14,6 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar/>
-        
         <Routes>
           <Route path='/' element={<EnterCard/>}/>
           <Route path='/cart' element={<CartContainer/>}/>
