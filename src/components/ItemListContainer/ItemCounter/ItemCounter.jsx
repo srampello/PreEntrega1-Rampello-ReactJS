@@ -11,11 +11,11 @@ export const ItemCounter = ({initial=1, stock=5, onAdd}) => {
     }
 
     return (
-        <div className="mx-5">
-            <button onClick={handleSumar}>+</button>
-            <label >{counter}</label>
-            <button onClick={handleRestar}>-</button>
-            <button onClick={handleOnAdd}>Buy</button>
+        <div>
+            <button onClick={handleSumar} className='btn mt-2 btn-light btn-lg'>+</button>
+            <label className='m-2'>{counter}</label>
+            <button onClick={handleRestar} className='btn mt-2 btn-light btn-lg'>-</button>
+            <button onClick={handleOnAdd} className='btn mt-2 btn-light btn-lg'>Add to cart</button>
         </div>
     )
 }

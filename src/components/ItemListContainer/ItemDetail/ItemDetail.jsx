@@ -28,7 +28,7 @@ export const ItemDetail = () => {
             <p className="card-text font-monospace">{product.brand}</p>
             <h5 className="card-title font-monospace">{product.name}</h5>
             <h4 className='font-monospace'>${product.price}</h4>
-            <a href="#" class="btn mt-3 btn-light btn-lg">Buy</a>
+            {/*<a href="#" className="btn mt-3 btn-light btn-lg">Buy</a>*/}
             <ItemCounter onAdd={onAdd}/>
           </div>
         </div>

@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import './ItemList.css'
 import { Filter } from './Filter';
 import { Link } from 'react-router-dom';
+import { Item } from '../Item/Item';
 
 const productFiltered = ({productos, filterState, handleFilterChange}) => (
   <>
@@ -54,37 +55,11 @@ const productFiltered = ({productos, filterState, handleFilterChange}) => (
     }}>
       {filterState === ''
             ?
-            productos.map(product => 
-              <Card border='dark' key={product.id} style={{ width: '175px' }}>
-                  <Card.Img variant="top" src={product.image} alt={product.alt} />
-                  <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>U$D
-                  {product.price}
-                  </Card.Text>
-                    <Link to={`/detail/${product.id}`}>
-                      <Button variant="dark">Detail</Button>  
-                    </Link>
-                  </Card.Body>
-              </Card>
-              )
+            productos.map(product => <Item key={product.id} product={product}/>)
             :
             productos
             .filter(prod => prod.brand.includes(filterState))
-            .map(product => 
-              <Card border='dark' key={product.id} style={{ width: '175px' }}>
-                  <Card.Img variant="top" src={product.image} alt={product.alt} />
-                  <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>U$D
-                  {product.price}
-                  </Card.Text>
-                  <Link to={`/detail/${product.id}`}>
-                      <Button variant="dark">Detail</Button>  
-                  </Link>
-                  </Card.Body>
-              </Card>
-            )
+            .map(product => <Item key={product.id} product={product}/>)
       }
     </div>
   </>
