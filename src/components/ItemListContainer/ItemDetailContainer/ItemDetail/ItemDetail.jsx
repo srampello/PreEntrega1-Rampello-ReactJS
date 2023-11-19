@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { mProducts } from '../../../helpers/products'
-import { useParams } from 'react-router-dom'
-import { ItemCounter } from '../ItemCounter/ItemCounter'
+import React from 'react'
+import { ItemCounter } from '../../ItemCounter/ItemCounter'
 
-export const ItemDetail = () => {
-  const [product, setProduct] = useState({})
-  const {pid} = useParams()
-
-  useEffect(()=>{
-    mProducts(pid)
-      .then(res => setProduct(res))
-      .catch(err => console.log('Error: ', err))
-  }, [])
-
-  const onAdd = (cantidad) =>{
+export const ItemDetail = ({product}) => {
+  
+const onAdd = (cantidad) =>{
     console.log(`La cantidad seleccionada es: ${cantidad}`)
-  }
+}
 
   return (
     <div className="card col-8 position-absolute top-50 start-50 translate-middle text-bg-dark">

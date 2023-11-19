@@ -26,10 +26,32 @@ export const NavBar = () => {
                                     Home
                                 </NavLink>
                             </li>
-                            <li className="nav-item m-2">
-                                <NavLink to='/sneakers' className={({ isActive })=> isActive ? 'btn btn-light' : 'btn btn-dark'} aria-current="page">
+                            <li className="nav-item m-2 dropdown">
+                                <NavLink to='/category/sneaker' className={({ isActive })=> isActive ? 'btn btn-light dropdown-toggle' : 'btn btn-dark dropdown-toggle' } role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
                                     Sneakers
                                 </NavLink>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <NavLink to='/category/sneaker/Nike' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
+                                            Nike
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to='/category/sneaker/Jordan' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
+                                            Jordan
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to='/category/sneaker/Yeezy' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
+                                            Yeezy
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to='/category/sneaker/Adidas' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
+                                            Adidas
+                                        </NavLink>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

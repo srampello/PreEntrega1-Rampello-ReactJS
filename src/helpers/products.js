@@ -304,8 +304,7 @@ const products = [
         "alt": "700_v3_azael",
         "category": "sneaker",
         "price": 155
-    },
-
+    }
 ]
 
 export const mProducts = (id) => new Promise((res, rej)=>{

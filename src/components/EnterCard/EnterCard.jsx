@@ -10,7 +10,7 @@ export const EnterCard = () => {
             <img src="https://i.ibb.co/SXjkXt7/SNEAKER-GUIDE-OPENER.jpg" className="card-img" alt="..."/>
             <div className="card-img-overlay">
                 <h3 className="card-title ">Sneaker Catalog</h3>
-                <Link to='/sneakers'>
+                <Link to='/category/sneaker'>
                     <button type='button' className='btn btn-outline-secondary'>Shop Now</button>
                 </Link>
                 
