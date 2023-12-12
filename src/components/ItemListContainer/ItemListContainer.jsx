@@ -1,30 +1,41 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { mProducts } from '../../helpers/products';
-import { useState } from 'react';
-import { ItemList } from './ItemList/ItemList';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ItemList } from './ItemList/ItemList';
+import { Loading } from '../Loading/Loading';
+
+import { collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import { BannerBrand } from '../EnterCard/BannerBrand';
+
 
 export function ItemListContainer(){
-  const [productos, setProductos] = useState([])
-  const {bid} = useParams()
+  const [product, setProduct] = useState([])
+  const [loading, setloading] = useState(true)
+  const {cid} = useParams()
 
-  useEffect(()=>{
-    if (bid) {
-      mProducts()
-      .then(result => setProductos(result.filter(product => product.brand === bid)))
+  useEffect(() => {
+    const dbFirestore = getFirestore()
+    const queryCollection = collection(dbFirestore, 'products')
+
+    const q = cid ? query(queryCollection, where('brand', '==', cid)) : queryCollection;
+
+    getDocs(q)
+      .then(resp => setProduct(resp.docs.map(product => ({id : product.id, ...product.data() }))))
       .catch(err => console.log(err))
-    } else {
-      mProducts()
-      .then(result => setProductos(result))
-      .catch(err => console.log(err))
-    }
-  }, [bid])
-
-
+      .finally(() => setloading(false))
+  },[cid])
+    
   return (
     <>
-      <ItemList productos={productos}/>
+      {
+        loading ? 
+          <Loading/>
+        :
+          <div>
+            <BannerBrand/>
+            <ItemList product={product}/>
+          </div>
+          
+      }
     </>
   )
 }

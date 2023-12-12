@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { mProducts } from '../../../helpers/products'
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from './ItemDetail/ItemDetail'
+import { doc, getDoc, getFirestore} from 'firebase/firestore'
+import { Loading } from '../../Loading/Loading'
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
+  const [loading, setLoading] = useState(true)
   const {pid} = useParams()
-  
-  useEffect(()=>{
-    mProducts(pid)
-      .then(res => setProduct(res))
-      .catch(err => console.log('Error: ', err))
-  }, [])
 
+  useEffect(() => {
+    const dbFirestore = getFirestore()
+    const dbRef = doc(dbFirestore, 'products', pid)
+    getDoc(dbRef)
+      .then((resp) =>{setProduct({id: resp.id, ...resp.data()})})
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false))
+  }, [pid])
+    
   return (
-    <ItemDetail product={product}/>
+    loading ?
+      <Loading/>
+    :
+      <ItemDetail product={product}/>
   )
 }

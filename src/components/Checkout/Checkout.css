@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: white;
+}
+
+form{
+    width: 25rem;
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.thanks{
+    margin: auto;
+    background-color: #212529;
+    display: grid;
+    row-gap: 0.5rem;
+    color: rgb(0, 0, 0);
+}

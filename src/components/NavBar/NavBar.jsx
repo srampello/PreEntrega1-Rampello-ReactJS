@@ -1,12 +1,19 @@
 import React from 'react'
 import { CartWidget } from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
+import './NavBar.css'
 
+const category = [
+    {id: '1', name: 'Nike', path: 'Nike'},
+    {id: '2', name: 'Jordan', path: 'Jordan'},
+    {id: '3', name: 'Yeezy', path: 'Yeezy'},
+    {id: '4', name: 'Adidas', path: 'Adidas'}
+]
 
 export const NavBar = () => {
   return (
     <>
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top p-0">
+        <nav className="navbar navbar-dark bg-dark sticky-top p-0">
             <div className="container-fluid">
                 <Link to='/' className="navbar-brand">
                 <img src="https://i.ibb.co/ykLMktY/iceclublogo.png" alt="iceClubLogo" width={75}/>
@@ -30,26 +37,9 @@ export const NavBar = () => {
                                 <NavLink to='/category/sneaker' className={({ isActive })=> isActive ? 'btn btn-light dropdown-toggle' : 'btn btn-dark dropdown-toggle' } role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
                                     Sneakers
                                 </NavLink>
-                                <ul class="dropdown-menu">
+                                <ul className="dropdown-menu">
                                     <li>
-                                        <NavLink to='/category/sneaker/Nike' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
-                                            Nike
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/category/sneaker/Jordan' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
-                                            Jordan
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/category/sneaker/Yeezy' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
-                                            Yeezy
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/category/sneaker/Adidas' className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'}>
-                                            Adidas
-                                        </NavLink>
+                                        {category.map(category => <NavLink key={category.id} className={({ isActive })=> isActive ? 'btn btn-light dropdown-item' : 'btn btn-dark dropdown-item'} to={`/category/${category.path}`}>{category.name}</NavLink>)}
                                     </li>
                                 </ul>
                             </li>
