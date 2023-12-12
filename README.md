@@ -10,7 +10,7 @@ _Beta Project for the IceClub sneaker store_
 [![netlify](https://i.ibb.co/k2sVqQZ/netlify-removebg-preview.png)](https://65786b9bca1cbb6aabdf7d9b--moonlit-daifuku-0e3254.netlify.app)
 
 ### GitHub
-[![github](https://i.ibb.co/LSgVG4L/githubb-1.png)](https://github.com/srampello/PreEntrega2-Rampello-ReactJS)
+[![github](https://i.ibb.co/LSgVG4L/githubb-1.png)](https://github.com/srampello/eCommerce-IceClub-Rampello-ReactJS)
 
 #### libraries
 | library | version | description |
