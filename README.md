@@ -3,8 +3,8 @@
 ## React JS CoderHouse
 ### Rampello Santiago
 
-Proyecyo Beta para la tienda de zapatillas IcceClub
-_Beta Project for the IceClub sneaker store_
+> Proyecyo Beta para la tienda de zapatillas IcceClub
+> _Beta Project for the IceClub sneaker store_
 
 ### Demo Page
 [![netlify](https://i.ibb.co/k2sVqQZ/netlify-removebg-preview.png)](https://65786b9bca1cbb6aabdf7d9b--moonlit-daifuku-0e3254.netlify.app)
